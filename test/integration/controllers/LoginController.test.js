@@ -36,6 +36,7 @@ describe('LoginController', function() {
                 password: user.password
             })
             .expect(200)
+            .expect({success:true})
             .expect('Content-Type', /json/)
             .expect(function (res) {
                 if (!('success' in res.body)) throw new Error("login not successful");
