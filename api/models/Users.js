@@ -8,7 +8,22 @@
 module.exports = {
 
   attributes: {
-
+    id: {
+      type: 'integer',
+      autoIncrement: true
+    },
+    name: {
+      type: 'string',
+      size: 100
+    },
+    email: {
+      type: 'email',
+      unique: true
+    },
+    password: {
+      type: 'string',
+      size: 100
+    },
   }
 };
 
