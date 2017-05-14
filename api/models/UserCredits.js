@@ -9,7 +9,8 @@ module.exports = {
 
   attributes: {
     user_id: {
-      type: 'integer'
+      type: 'integer',
+      unique: true
     },
     remaining_credit: {
       type: 'integer'
