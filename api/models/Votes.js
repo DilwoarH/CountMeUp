@@ -8,7 +8,17 @@
 module.exports = {
 
   attributes: {
-
+    id: {
+      type: 'integer',
+      autoIncrement: true
+    },
+    user_id: {
+      type: 'integer'  
+    },
+    candidate_id: {
+      type: 'integer',
+      index: true
+    }
   }
 };
 
