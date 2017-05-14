@@ -8,7 +8,15 @@
 module.exports = {
 
   attributes: {
-
+    id: {
+      type: 'integer',
+      autoIncrement: true,
+      primaryKey: true
+    },
+    name: {
+      type: 'string',
+      size: 100
+    }
   }
 };
 
