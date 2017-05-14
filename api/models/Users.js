@@ -10,7 +10,8 @@ module.exports = {
   attributes: {
     id: {
       type: 'integer',
-      autoIncrement: true
+      autoIncrement: true,
+      primaryKey: true
     },
     name: {
       type: 'string',
