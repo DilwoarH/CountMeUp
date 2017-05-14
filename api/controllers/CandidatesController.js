@@ -7,5 +7,11 @@
 
 module.exports = {
 	
+    prePopulate: function(req, res) {
+        CandidatesService.prePopulateCandidates(function(prePopulatedCandidates) {
+            res.json({success: true});
+        });
+    }
+
 };
 
