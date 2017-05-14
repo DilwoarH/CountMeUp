@@ -1,8 +1,8 @@
 var request = require('supertest');
 
-describe('VoteController', function() {
+describe('ReportController', function() {
 
-    describe('/vote successful test', function() {
+    describe('/report successful test', function() {
         
         it('GET /report', function (done) {
 

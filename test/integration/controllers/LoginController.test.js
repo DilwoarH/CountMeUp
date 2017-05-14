@@ -2,7 +2,7 @@ const request = require('supertest');
 
 describe('LoginController', function() {
 
-    describe('/vote successful test', function() {
+    describe('/login successful test', function() {
         
         var randomString = Math.random().toString(36).substring(3);
        
