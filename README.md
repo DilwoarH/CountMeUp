@@ -34,6 +34,56 @@ Navigate to http://localhost:1337/
 npm test;
 ```
 
+### How to use Application
+```
+1. Register Voter
+
+POST /register
+PAYLOAD:
+{
+	"name": "Test Voter",
+	"email": "vote@test.com",
+	"password": "password123"
+}
+
+2. Login with Voter details
+
+POST /login
+PAYLOAD:
+{
+	"email": "vote@test.com",
+	"password": "password123"
+}
+
+3. See Candidate list
+
+GET /candidates
+
+4. Vote for Candidate
+
+POST /votes
+PAYLOAD:
+{
+	"candidate_id": 1
+}
+
+5. See Results
+
+GET /results
+```
+
+### Out of Scope
+
+This is work which was considered but was out of scope for the project:
+
+- Additional Candidate Details
+- Ability to Add Candidates
+- Ability to Delete Candidates
+- Ability to see results in percentage aswell as number of votes
+- Views / UI
+- Voter Details
+- Admin User / Admin User Functionality (This will be needed for showing results)
+
 ## Example Responses
 
 ### POST /register
