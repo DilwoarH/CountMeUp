@@ -38,6 +38,8 @@ module.exports.routes = {
 
   'GET /init': 'InitController.prePopulate',
   
+  'GET /candidates': 'CandidatesController.list',
+  
   'GET /results': 'ResultsController.getResults',
   
   'POST /register': 'RegisterController.register',

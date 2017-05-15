@@ -13,7 +13,7 @@ describe('VoteController', function() {
         };
 
         var candidate_data = {
-            id: 1,
+            candidate_id: 1,
             test: true
         };
 
@@ -23,11 +23,12 @@ describe('VoteController', function() {
             .post('/register')
             .send({ 
                 name: user.name, 
-                email: user.email
+                email: user.email,
+                password: user.password
             })
             .expect(200)
             .expect('Content-Type', /json/)
-            .expect('location','/register', done);
+            .end(done);
             
         });
 
@@ -41,7 +42,7 @@ describe('VoteController', function() {
             })
             .expect(200)
             .expect('Content-Type', /json/)
-            .expect('location','/', done);
+            .end(done);
             
         });
 
@@ -49,12 +50,10 @@ describe('VoteController', function() {
             
             request(sails.hooks.http.app)
             .post('/vote')
-            .send({ 
-                candidate_id: candidate_data.id
-            })
+            .send( candidate_data )
             .expect(201)
             .expect('Content-Type', /json/)
-            .expect('location','/', done);
+            .end(done);
             
         });
 
@@ -71,7 +70,7 @@ describe('VoteController', function() {
         };
 
         var candidate_data = {
-            id: 1,
+            candidate_id: 1,
             test: true
         };
 
@@ -81,11 +80,12 @@ describe('VoteController', function() {
             .post('/register')
             .send({ 
                 name: user.name, 
-                email: user.email
+                email: user.email,
+                password: user.password
             })
             .expect(200)
             .expect('Content-Type', /json/)
-            .expect('location','/register', done);
+            .end(done);
             
         });
 
@@ -99,7 +99,7 @@ describe('VoteController', function() {
             })
             .expect(200)
             .expect('Content-Type', /json/)
-            .expect('location','/', done);
+            .end(done);
             
         });
 
@@ -111,7 +111,7 @@ describe('VoteController', function() {
             .send( candidate_data )
             .expect(201)
             .expect('Content-Type', /json/)
-            .expect('location','/', done);
+            .end(done);
 
             //second vote
             request(sails.hooks.http.app)
@@ -119,7 +119,7 @@ describe('VoteController', function() {
             .send( candidate_data )
             .expect(201)
             .expect('Content-Type', /json/)
-            .expect('location','/', done);
+            .end(done);
 
             //third vote
             request(sails.hooks.http.app)
@@ -127,7 +127,7 @@ describe('VoteController', function() {
             .send( candidate_data )
             .expect(201)
             .expect('Content-Type', /json/)
-            .expect('location','/', done);
+            .end(done);
             
             //fourth vote
             request(sails.hooks.http.app)
@@ -135,7 +135,7 @@ describe('VoteController', function() {
             .send( candidate_data )
             .expect(403)
             .expect('Content-Type', /json/)
-            .expect('location','/', done); 
+            .end(done); 
 
         });
 

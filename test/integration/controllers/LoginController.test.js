@@ -23,7 +23,7 @@ describe('LoginController', function() {
             })
             .expect(200)
             .expect('Content-Type', /json/)
-            .expect('location','/register', done);
+            .end(done);
             
         });
 
@@ -41,7 +41,7 @@ describe('LoginController', function() {
             .expect(function (res) {
                 if (!('success' in res.body)) throw new Error("login not successful");
             })
-            .expect('location','/login', done);
+            .end(done);
             
         });
     });

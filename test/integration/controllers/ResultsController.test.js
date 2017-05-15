@@ -1,16 +1,16 @@
 var request = require('supertest');
 
-describe('ReportController', function() {
+describe('ResultsController', function() {
 
-    describe('/report successful test', function() {
+    describe('/results successful test', function() {
         
-        it('GET /report', function (done) {
+        it('GET /results', function (done) {
 
             request(sails.hooks.http.app)
-            .get('/report')
+            .get('/results')
             .expect(200)
             .expect('Content-Type', /json/)
-            .expect('location','/report', done);
+            .end(done);
             
         });
 

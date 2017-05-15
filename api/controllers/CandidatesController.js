@@ -6,6 +6,10 @@
  */
 
 module.exports = {
-
+    list: function(req, res){
+        CandidatesService.list(function(list) {
+            res.json(list);
+        });
+    }
 };
 

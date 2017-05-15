@@ -1,5 +1,5 @@
 module.exports = {
-  prePopulateCandidates: function(next){
+    prePopulateCandidates: function(next){
 
         Candidates.findOrCreate(
            [ {id: 1, name:'Paul Walker'}, 
@@ -8,6 +8,13 @@ module.exports = {
             {id: 4, name:'Jordana Brewster'} ]
         ).exec(function createFindCB(error, createdOrFoundRecords){
             next( createdOrFoundRecords );
+        });
+
+    },
+    list: function(next){
+
+        Candidates.find().exec(function createFindCB(error, allCandidates){
+            next( allCandidates );
         });
 
     }

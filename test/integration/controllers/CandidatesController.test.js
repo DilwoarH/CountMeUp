@@ -10,7 +10,7 @@ describe('ReportController', function() {
             .get('/candidates')
             .expect(200)
             .expect('Content-Type', /json/)
-            .expect('location','/candidates', done);
+            .end(done);
             
         });
 

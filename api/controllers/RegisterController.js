@@ -15,6 +15,7 @@ module.exports = {
         
         if ( !_.size( user.name ) || !_.size( user.email )  || !_.size( user.password ) )
         {
+            res.status(403);
             res.send( { error: "Invalid request." } );
             return;
         }
@@ -26,6 +27,7 @@ module.exports = {
 
             if ( found != 0 )
             {
+                res.status(403);
                 res.json( { error: "User Already Registered" } );
                 return;
             }  
@@ -34,6 +36,7 @@ module.exports = {
                 
                 if ( user_id.error ) 
                 {
+                    res.status(403);
                     res.send( { error: user.error.summary } );
                     return;
                 }
