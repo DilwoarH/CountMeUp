@@ -44,7 +44,9 @@ module.exports.routes = {
   
   'POST /login': 'LoginController.login',
 
-  'GET /logout': 'LoginController.logout'
+  'GET /logout': 'LoginController.logout',
+
+  'POST /vote': 'VotesController.giveVote'
 
   /***************************************************************************
   *                                                                          *

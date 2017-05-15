@@ -27,7 +27,7 @@ module.exports = {
                 return;
             }
 
-            req.session.user = user;
+            req.session.user = userFound[0];
             req.session.isAuthenticated = true;
             res.json( {success: true} );
 
