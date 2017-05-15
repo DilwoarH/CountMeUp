@@ -18,7 +18,8 @@ module.exports = {
       size: 100
     },
     email: {
-      type: 'email',
+      type: 'string',
+      size: 100,
       unique: true
     },
     password: {

@@ -5,6 +5,7 @@
   "description": "a Sails application",
   "keywords": [],
   "dependencies": {
+    "crypto": "0.0.3",
     "ejs": "2.3.4",
     "grunt": "1.0.1",
     "grunt-contrib-clean": "1.0.0",
@@ -20,6 +21,7 @@
     "grunt-sync": "0.5.2",
     "include-all": "^1.0.0",
     "jsdoc": "^3.4.3",
+    "lodash": "^4.17.4",
     "mocha": "^3.4.1",
     "rc": "1.0.1",
     "sails": "~0.12.13",
