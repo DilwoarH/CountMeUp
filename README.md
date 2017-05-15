@@ -1,8 +1,13 @@
 # CountMeUp
 
-```javascript
-Microservice using NodeJS to count votes for candidates.
-```
+
+Microservice using NodeJS to count votes for candidates. This microservice will allow users to:
+- Register Voters
+- Login as a Voter
+- See Candidates List
+- See Results page with votes breakdown
+- Submit a vote ( upto 3 times )
+
 
 ## Instructions
 
