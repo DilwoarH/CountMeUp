@@ -36,11 +36,15 @@ module.exports.routes = {
     view: 'homepage'
   },
 
-  '/init': 'InitController.prePopulate',
+  'GET /init': 'InitController.prePopulate',
   
-  '/results': 'ResultsController.getResults',
+  'GET /results': 'ResultsController.getResults',
   
-  'POST /register': 'RegisterController.register'
+  'POST /register': 'RegisterController.register',
+  
+  'POST /login': 'LoginController.login',
+
+  'GET /logout': 'LoginController.logout'
 
   /***************************************************************************
   *                                                                          *
