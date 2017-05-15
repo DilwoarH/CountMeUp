@@ -16,6 +16,12 @@ module.exports = {
     name: {
       type: 'string',
       size: 100
+    },
+
+    // Add a reference to Votes
+    votes: {
+      collection: 'Votes',
+      via: 'candidate_id'
     }
   }
 };

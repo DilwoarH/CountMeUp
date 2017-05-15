@@ -6,6 +6,12 @@
  */
 
 module.exports = {
-	
+
+    getResults: function(req, res) {
+        ResultsService.getResults(function( results ) {
+            res.json( results );
+        });
+    }
+
 };
 

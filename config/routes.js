@@ -36,7 +36,8 @@ module.exports.routes = {
     view: 'homepage'
   },
 
-  '/candidates/init': 'CandidatesController.prePopulate'
+  '/candidates/init': 'CandidatesController.prePopulate',
+  '/results': 'ResultsController.getResults'
 
   /***************************************************************************
   *                                                                          *

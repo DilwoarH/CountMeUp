@@ -16,8 +16,7 @@ module.exports = {
       type: 'integer'  
     },
     candidate_id: {
-      type: 'integer',
-      index: true
+      model: 'Candidates'
     }
   }
 };
