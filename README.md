@@ -1,13 +1,13 @@
 # CountMeUp
 
-```
+```javascript
 Microservice using NodeJS to count votes for candidates.
 ```
 
 ## Instructions
 
 ### Pre-requisites
-```
+```javascript
 1. NodeJS / NPM - https://nodejs.org/en/download/
 2. A modern browser - https://www.google.co.uk/chrome/browser/desktop/
 3. GIT (optional)
@@ -15,7 +15,7 @@ Microservice using NodeJS to count votes for candidates.
 
 ### Initial Set up
 
-``` 
+```javascript
 1. git clone https://github.com/DilwoarH/CountMeUp
 2. npm install
 3. npm start
@@ -23,19 +23,19 @@ Microservice using NodeJS to count votes for candidates.
 ```
 
 ### How to start application
-```
+```javascript
 npm start;
 Navigate to http://localhost:1337/
 ```
 
 ### How to run Tests
 
-```
+```javascript
 npm test;
 ```
 
 ### How to use Application
-```
+```javascript
 1. Register Voter
 
 POST /register
