@@ -1,5 +1,13 @@
 module.exports = {
 
+    checkifCandidateExists: function(cand_id, next) {
+        Candidates.count({id:cand_id}).exec(function countCB(error, found) {
+
+            next( found );
+
+        });
+    },
+
     getUserCredit: function(user_id, next) {
         UserCredits.find({user_id:user_id}).exec(function countCB(error, found) {
 

@@ -29,52 +29,57 @@ module.exports = {
             return;
         }
 
-
-        VotesService.getUserCredit( user_id, function(userCredits){
-            if ( !_.size( userCredits ) || userCredits[0].remaining_credit < 1)
+        VotesService.checkifCandidateExists( candidate.candidate_id, function(exists) 
+        {
+            if ( exists.error || exists == 0 )
             {
-                res.status( 403 );
-                res.send( {error: "Vote Invalid. You are out of votes."} );
+                res.status(403);
+                res.send( {error: "Vote Invalid. Candidate does not exist."} );
                 return;
             }
 
-            userCredits = userCredits[0];
-
-            var new_credit = userCredits.remaining_credit - 1;
-
-            VotesService.removeCredit( user_id, new_credit, function( creditUpdated ){
-                
-                if ( creditUpdated.error )
+            VotesService.getUserCredit( user_id, function(userCredits){
+                if ( !_.size( userCredits ) || userCredits[0].remaining_credit < 1)
                 {
-                    res.send( {error: "Vote Invalid. Error Occured."} );
                     res.status( 403 );
+                    res.send( {error: "Vote Invalid. You are out of votes."} );
                     return;
                 }
 
-                var data = {
-                    user_id: user_id,
-                    candidate_id: candidate.candidate_id
-                };
+                userCredits = userCredits[0];
 
-                VotesService.addVote( data, function( vote ) {
-                    if ( vote.error )
+                var new_credit = userCredits.remaining_credit - 1;
+
+                VotesService.removeCredit( user_id, new_credit, function( creditUpdated ){
+                    
+                    if ( creditUpdated.error )
                     {
-                        res.status( 403 );
                         res.send( {error: "Vote Invalid. Error Occured."} );
+                        res.status( 403 );
                         return;
                     }
-                    
-                    res.status( 201 );
-                    res.send({success:true});
+
+                    var data = {
+                        user_id: user_id,
+                        candidate_id: candidate.candidate_id
+                    };
+
+                    VotesService.addVote( data, function( vote ) {
+                        if ( vote.error )
+                        {
+                            res.status( 403 );
+                            res.send( {error: "Vote Invalid. Error Occured."} );
+                            return;
+                        }
+                        
+                        res.status( 201 );
+                        res.send({success:true});
+                    });
+
                 });
 
             });
-
-            
-
         });
-
     }
-
 };
 

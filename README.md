@@ -167,6 +167,12 @@ RESPONSE:
 ### POST /votes
 ```javascript
 
+PAYLOAD:
+{
+	"candidate_id": 1
+}
+
+RESPONSE:
 {
     "success": true
 }
@@ -175,9 +181,28 @@ RESPONSE:
 
 ### POST /votes - out of votes
 ```javascript
+PAYLOAD:
+{
+	"candidate_id": 1
+}
 
+RESPONSE:
 {
     "error": "Vote Invalid. You are out of votes."
+}
+
+```
+
+### POST /votes - candidate does not exist
+```javascript
+PAYLOAD:
+{
+	"candidate_id": 1122112
+}
+
+RESPONSE:
+{
+    "error": "Vote Invalid. Candidate does not exist."
 }
 
 ```
