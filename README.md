@@ -102,6 +102,15 @@ RESPONSE:
 
 ```
 
+### GET /logout
+```javascript
+
+{
+    "success": true
+}
+
+```
+
 
 ### GET /results
 ```javascript
@@ -204,6 +213,26 @@ RESPONSE:
 {
     "error": "Vote Invalid. Candidate does not exist."
 }
+
+```
+
+## References
+
+### Libraries Used
+```
+Express
+- Express is a minimal and flexible Node.js web application framework that provides a robust set of features 
+for web and mobile applications.
+
+Lodash
+- Lodash makes JavaScript easier by taking the hassle out of working with arrays, numbers, objects, strings, etc.
+- Lodash’s modular methods are great for:
+    - Iterating arrays, objects, & strings
+    - Manipulating & testing values
+    - Creating composite functions
+
+Sails.js
+- Sails.js is a web framework that makes it easy to build custom, enterprise-grade Node.js apps. It is designed to resemble the MVC architecture from frameworks like Ruby on Rails, but with support for the more modern, data-oriented style of web app development. It's especially good for building realtime features like chat.
 
 ```
 
